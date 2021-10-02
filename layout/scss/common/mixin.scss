@@ -1,0 +1,16 @@
+@mixin valid-button($font-size, $txt-transform, $txt-deco, $txt-col, $font-weight, $brdr-type, $brdr-width, $brdr-col, $brdr-rad, $bg-col, $txt-hover-col, $txt-hover-bg-col){
+    @extend %button-padding;
+    font-size: $font-size;
+    text-transform: $txt-transform;
+    text-decoration: $txt-deco;
+    color: $txt-col;
+    font-weight: $font-weight;
+    border: $brdr-type $brdr-width $brdr-col;
+    border-radius: $brdr-rad;
+    background-color: $bg-col;
+    display: inline-block;
+    &:hover{
+        color: $txt-hover-col;
+        background-color: $txt-hover-bg-col;
+    }
+}

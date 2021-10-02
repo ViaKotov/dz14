@@ -1,0 +1,13 @@
+%column-flexed{
+    display: flex;
+    flex-direction: column;
+}
+
+%row-flexed{
+    display: flex;
+    flex-direction: row;
+}
+
+%button-padding{
+    padding: 16px 70px;
+}

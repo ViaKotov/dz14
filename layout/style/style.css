@@ -1,0 +1,265 @@
+@charset "UTF-8";
+/* Указываем box sizing */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.offer .offer__items .offer__items-item, .offer .offer__description, .banner__wrapper .banner .banner__description {
+  display: flex;
+  flex-direction: column;
+}
+
+.offer .offer__items, .offer {
+  display: flex;
+  flex-direction: row;
+}
+
+.offer .offer__description .offer__description-link a, .banner__wrapper .banner .banner__description .banner__description-link a {
+  padding: 16px 70px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: "Open Sans", sans-serif;
+}
+
+.width {
+  max-width: 1250px;
+}
+
+.margin {
+  margin: 0 auto;
+}
+
+.bordered {
+  border: solid 1px black;
+}
+
+.banner__wrapper {
+  width: 100%;
+  padding: 100px 0 111px;
+  background-color: #f6f2f2;
+}
+.banner__wrapper .banner {
+  max-width: 1250px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.banner__wrapper .banner .banner__description {
+  text-align: left;
+  color: #000000;
+  width: 50%;
+}
+.banner__wrapper .banner .banner__description .banner__description-title {
+  display: inline;
+}
+.banner__wrapper .banner .banner__description .banner__description-title span {
+  display: inline-block;
+  font-weight: 1000;
+  font-size: 55px;
+  text-transform: uppercase;
+}
+.banner__wrapper .banner .banner__description .banner__description-subtitle {
+  padding: 10px 0 0;
+}
+.banner__wrapper .banner .banner__description .banner__description-subtitle p {
+  font-size: 16px;
+  line-height: 28px;
+  max-width: 520px;
+}
+.banner__wrapper .banner .banner__description .banner__description-link {
+  padding: 30px 0 0;
+}
+.banner__wrapper .banner .banner__description .banner__description-link a {
+  font-size: 16px;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  border: none 0 transparent;
+  border-radius: 5px;
+  background-color: #ff2d2d;
+  display: inline-block;
+  transition: 0.2s;
+}
+.banner__wrapper .banner .banner__description .banner__description-link a:hover {
+  color: #ff2d2d;
+  background-color: #313030;
+}
+.banner__wrapper .banner .banner__video {
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0px 0px 60px rgba(124, 122, 113, 0.6);
+}
+
+header {
+  width: 100%;
+  padding: 29px 0 0;
+  background-color: #f6f2f2;
+}
+header .menu {
+  display: flex;
+  justify-content: center;
+  background-color: #313030;
+  font-size: 14px;
+}
+header .menu .menu__list {
+  text-transform: uppercase;
+}
+header .menu .menu__list .menu__list-item {
+  display: inline;
+}
+header .menu .menu__list .menu__list-item a {
+  display: inline-block;
+  text-decoration: none;
+  color: #e0e0e0;
+  font-weight: bold;
+  padding: 35px 23px;
+  background-color: #313030;
+  transition: 0.2s;
+}
+header .menu .menu__list .menu__list-item a:hover {
+  background-color: #ff3f40;
+}
+
+.offer {
+  padding-top: 110px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.offer .offer__description {
+  color: #333333;
+  width: 50%;
+}
+.offer .offer__description .offer__description-title span {
+  text-transform: uppercase;
+  font-size: 42px;
+  font-weight: bold;
+}
+.offer .offer__description .offer__description-subtitle {
+  padding: 28px 0 0;
+  max-width: 520px;
+  line-height: 28px;
+}
+.offer .offer__description .offer__description-link {
+  padding: 45px 0 0;
+}
+.offer .offer__description .offer__description-link a {
+  font-size: 15px;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #ff2d2d;
+  font-weight: bold;
+  border: solid 2px #ff0000;
+  border-radius: 5px;
+  background-color: #ffffff;
+  display: inline-block;
+  transition: 0.2s;
+}
+.offer .offer__description .offer__description-link a:hover {
+  color: #ffffff;
+  background-color: #ff2d2d;
+}
+.offer .offer__items {
+  flex-wrap: wrap;
+  width: 50%;
+  justify-content: space-between;
+}
+.offer .offer__items .offer__items-item {
+  max-width: 50%;
+  padding: 0 0 50px;
+}
+.offer .offer__items .offer__items-item .offer__item-icon {
+  padding: 0 0 20px;
+}
+.offer .offer__items .offer__items-item .offer__item-title {
+  text-transform: capitalize;
+  font-size: 24px;
+  color: #333333;
+}
+.offer .offer__items .offer__items-item .offer__item-description {
+  line-height: 28px;
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=style.css.map */
