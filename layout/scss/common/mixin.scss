@@ -14,3 +14,14 @@
         background-color: $txt-hover-bg-col;
     }
 }
+
+@mixin list-link($link-color, $link-hover-color){
+    a{
+        text-decoration: none;
+        color: $link-color;
+        transition: $global-transition;
+        &:hover{
+            color: $link-hover-color;
+        }
+    }
+}

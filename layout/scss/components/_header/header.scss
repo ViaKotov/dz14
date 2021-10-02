@@ -21,7 +21,7 @@ header{
                     font-weight: bold;
                     padding: 35px 23px;
                     background-color: $nav-bg-common-color; 
-                    transition: .2s;
+                    transition: $global-transition;
                     &:hover{
                         background-color: $nav-bg-hover-color;
                     }
