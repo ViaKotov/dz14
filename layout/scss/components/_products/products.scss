@@ -41,5 +41,17 @@
                 }
             }
         }
+        .products__items{
+            @extend %row-flexed;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 60px 0 0;
+            .products__item{
+                padding: 0 0 20px;
+                img{
+                    margin: 0;
+                }
+            }
+        }
     }
 }
