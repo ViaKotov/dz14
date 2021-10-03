@@ -7,28 +7,17 @@
         padding: 90px 0 0;
         .products__title{
             padding: 13px 0 0;
-            font-size: 42px;
-            color: $offer-font-color;
-            font-weight: bold;
-            text-transform: uppercase;
+            @extend %dark-title;
         }
         .products__subtitle{
-            line-height: 28px;
+            @extend %dark-subtitle;
             max-width: 508px;
             text-align: center;
-            &::after{
-                margin: 25px auto 0;
-                content: '';
-                display: block;
-                height: 2px;
-                width: 131px;
-                background-color: $global-strip-color;
-            }
+            @include pseudo-strip(25px, auto, 0, auto);
         }
         .products__menu{
             padding: 82px 0 0;
             ul{
-                
                 li{
                     padding: 0 54px 0 0;
                     display: inline;
@@ -37,7 +26,6 @@
                     font-size: $products__menu-font-size;
                     font-weight: bold;
                     @include list-link($products__menu-link-color, $products__menu-link-hover-color);
-                    
                 }
             }
         }

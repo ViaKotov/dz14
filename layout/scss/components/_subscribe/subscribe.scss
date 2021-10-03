@@ -1,0 +1,39 @@
+.subscribe__wrapper{
+    width: 100%;
+    margin: 110px auto 0;
+    background-color: $third-bg-color;
+    .subscribe{
+        padding: 140px 0;
+        @extend %column-flexed;
+        align-items: center;
+        .subscribe__title{
+            font-size:$title-font-size;
+            color: #fdfcf8;
+            font-weight: bold;
+        }
+        .subscribe__subtitle{
+            padding: 32px 0 0;
+            color: #fdfcf8;
+        }
+        .subscribe__form{
+            padding: 60px 0 0;
+            form{
+                @extend %row-flexed;
+                input[type=email]{
+                    border: none;
+                    width: 520px;
+                    height: 79px;
+                    border-radius: 5px;
+                    padding: 0 36px 0;
+                    margin: 0 20px 0 0;
+                    color: $offer-font-color;
+                    @include placeholder-color($offer-font-color);
+                    @extend %remove-focus-outline;
+                }
+                input[type=button]{
+                    @include form-button($banner-btn-bg-color, $banner-btn-font-color, $banner-btn-bg-color, $banner-btn-font-color);
+                }
+            }
+        }
+    }
+}

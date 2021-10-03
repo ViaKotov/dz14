@@ -9,15 +9,13 @@
         width: 50%;
         .offer__description-title{
             span{
-                text-transform: uppercase;
-                font-size: 42px;
-                font-weight: bold;
+                @extend %dark-title;
             }
         }
         .offer__description-subtitle{
             padding: 28px 0 0;
-            max-width: $subtitle-max-width;
-            line-height: 28px;
+            max-width: 520px;
+            @extend %dark-subtitle;
         }
         .offer__description-link{
             padding: 45px 0 0;

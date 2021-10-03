@@ -11,3 +11,27 @@
 %button-padding{
     padding: 16px 70px;
 }
+
+%form-border-radius{
+    border-radius: 5px;
+}
+
+%dark-title{
+    text-transform: uppercase;
+    font-size: $title-font-size;
+    font-weight: bold;
+    color: $offer-font-color;
+}
+
+%dark-subtitle{
+    line-height: 28px;
+    font-size: $subtitle-font-size;
+    color: $offer-font-color;
+}
+
+
+%remove-focus-outline{
+    &:focus-visible{
+        outline: none;
+    }
+}

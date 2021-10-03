@@ -77,18 +77,39 @@ select {
     scroll-behavior: auto !important;
   }
 }
-.products__wrapper .products, .offer .offer__items .offer__items-item, .offer .offer__description, .banner__wrapper .banner .banner__description {
+.contact .contact__form form, .subscribe__wrapper .subscribe, .our-team .our-team__info .our-team__details, .products__wrapper .products, .offer .offer__items .offer__items-item, .offer .offer__description, .banner__wrapper .banner .banner__description {
   display: flex;
   flex-direction: column;
 }
 
-.products__wrapper .products .products__items, .offer .offer__items, .offer {
+.contact .contact__form form div, .contact .contact__form, .subscribe__wrapper .subscribe .subscribe__form form, .our-team .our-team__info .our-team__details .our-team__other-members, .our-team .our-team__info, .products__wrapper .products .products__items, .offer .offer__items, .offer {
   display: flex;
   flex-direction: row;
 }
 
 .offer .offer__description .offer__description-link a, .banner__wrapper .banner .banner__description .banner__description-link a {
   padding: 16px 70px;
+}
+
+.contact .contact__form form input[type=button], .subscribe__wrapper .subscribe .subscribe__form form input[type=button] {
+  border-radius: 5px;
+}
+
+.contact .contact__title, .our-team .our-team__text .our-team__text-title, .products__wrapper .products .products__title, .offer .offer__description .offer__description-title span {
+  text-transform: uppercase;
+  font-size: 42px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.contact .contact__subtitle, .our-team .our-team__text .our-team__text-subtitle, .products__wrapper .products .products__subtitle, .offer .offer__description .offer__description-subtitle {
+  line-height: 28px;
+  font-size: 16px;
+  color: #333333;
+}
+
+.contact .contact__form form input[type=text]:focus-visible, .contact .contact__form form input[type=email]:focus-visible, .contact .contact__form form textarea:focus-visible, .subscribe__wrapper .subscribe .subscribe__form form input[type=email]:focus-visible {
+  outline: none;
 }
 
 * {
@@ -211,15 +232,9 @@ header .menu .menu__list .menu__list-item a:hover {
   color: #333333;
   width: 50%;
 }
-.offer .offer__description .offer__description-title span {
-  text-transform: uppercase;
-  font-size: 42px;
-  font-weight: bold;
-}
 .offer .offer__description .offer__description-subtitle {
   padding: 28px 0 0;
   max-width: 520px;
-  line-height: 28px;
 }
 .offer .offer__description .offer__description-link {
   padding: 45px 0 0;
@@ -272,18 +287,13 @@ header .menu .menu__list .menu__list-item a:hover {
 }
 .products__wrapper .products .products__title {
   padding: 13px 0 0;
-  font-size: 42px;
-  color: #333333;
-  font-weight: bold;
-  text-transform: uppercase;
 }
 .products__wrapper .products .products__subtitle {
-  line-height: 28px;
   max-width: 508px;
   text-align: center;
 }
 .products__wrapper .products .products__subtitle::after {
-  margin: 25px auto 0;
+  margin: 25px auto 0 auto;
   content: "";
   display: block;
   height: 2px;
@@ -319,6 +329,205 @@ header .menu .menu__list .menu__list-item a:hover {
 }
 .products__wrapper .products .products__items .products__item img {
   margin: 0;
+}
+
+.our-team .our-team__text {
+  color: #333333;
+}
+.our-team .our-team__text .our-team__text-title {
+  padding: 102px 0 0;
+}
+.our-team .our-team__text .our-team__text-subtitle {
+  padding: 19px 0 0;
+  max-width: 450px;
+}
+.our-team .our-team__text .our-team__text-subtitle::after {
+  margin: 28px 0 0 0;
+  content: "";
+  display: block;
+  height: 2px;
+  width: 131px;
+  background-color: #ff3f40;
+}
+.our-team .our-team__info {
+  padding: 70px 0 0;
+  justify-content: space-between;
+}
+.our-team .our-team__info .our-team__photo {
+  color: red;
+}
+.our-team .our-team__info .our-team__details {
+  color: #333333;
+  flex-wrap: wrap;
+  padding: 0 0 0 72px;
+  justify-content: flex-end;
+}
+.our-team .our-team__info .our-team__details .our-team__person-info .our-team__person-name {
+  font-size: 28px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0 0 16px;
+}
+.our-team .our-team__info .our-team__details .our-team__person-info .our-team__person-about {
+  line-height: 28px;
+  padding: 0 0 34px;
+}
+.our-team .our-team__info .our-team__details .our-team__person-info .our-team__person-links {
+  padding: 0 0 60px;
+}
+.our-team .our-team__info .our-team__details .our-team__person-info .our-team__person-links ul {
+  display: flex;
+  flex-wrap: wrap;
+  text-transform: capitalize;
+  font-style: italic;
+  font-size: 18px;
+}
+.our-team .our-team__info .our-team__details .our-team__person-info .our-team__person-links ul li {
+  list-style-type: none;
+}
+.our-team .our-team__info .our-team__details .our-team__person-info .our-team__person-links ul li:not(:last-child) {
+  padding: 0 48px 0 0;
+}
+.our-team .our-team__info .our-team__details .our-team__person-info .our-team__person-links ul li a {
+  text-decoration: none;
+}
+.our-team .our-team__info .our-team__details .our-team__other-members {
+  justify-content: space-between;
+}
+.our-team .our-team__info .our-team__details .our-team__other-members .our-team__member {
+  position: relative;
+}
+.our-team .our-team__info .our-team__details .our-team__other-members .our-team__member img {
+  width: 100%;
+}
+.our-team .our-team__info .our-team__details .our-team__other-members .our-team__member a {
+  position: absolute;
+  width: 100%;
+  padding: 10px 0;
+  top: 170px;
+  left: 0;
+  background: transparent;
+  color: transparent;
+  transition: 0.2s;
+}
+.our-team .our-team__info .our-team__details .our-team__other-members .our-team__member a:hover {
+  display: inline;
+  color: #e0e0e0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.subscribe__wrapper {
+  width: 100%;
+  margin: 110px auto 0;
+  background-color: #f5f0dd;
+}
+.subscribe__wrapper .subscribe {
+  padding: 140px 0;
+  align-items: center;
+}
+.subscribe__wrapper .subscribe .subscribe__title {
+  font-size: 42px;
+  color: #fdfcf8;
+  font-weight: bold;
+}
+.subscribe__wrapper .subscribe .subscribe__subtitle {
+  padding: 32px 0 0;
+  color: #fdfcf8;
+}
+.subscribe__wrapper .subscribe .subscribe__form {
+  padding: 60px 0 0;
+}
+.subscribe__wrapper .subscribe .subscribe__form form input[type=email] {
+  border: none;
+  width: 520px;
+  height: 79px;
+  border-radius: 5px;
+  padding: 0 36px 0;
+  margin: 0 20px 0 0;
+  color: #333333;
+}
+.subscribe__wrapper .subscribe .subscribe__form form input[type=email]::placeholder {
+  color: #333333;
+}
+.subscribe__wrapper .subscribe .subscribe__form form input[type=button] {
+  background-color: #ff2d2d;
+  border: solid 2px #ff2d2d;
+  padding: 25px 50px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.2s;
+}
+.subscribe__wrapper .subscribe .subscribe__form form input[type=button]:hover {
+  border-color: #ff2d2d;
+  background-color: #ffffff;
+  color: #ff2d2d;
+  cursor: pointer;
+}
+
+.contact .contact__title {
+  padding: 89px 0 0;
+}
+.contact .contact__subtitle {
+  padding: 28px 0 0;
+}
+.contact .contact__subtitle::after {
+  margin: 54px 0 0 0;
+  content: "";
+  display: block;
+  height: 2px;
+  width: 131px;
+  background-color: #ff3f40;
+}
+.contact .contact__form {
+  flex-wrap: wrap;
+}
+.contact .contact__form form {
+  flex-wrap: wrap;
+  color: #333333;
+}
+.contact .contact__form form div {
+  justify-content: space-between;
+}
+.contact .contact__form form textarea {
+  margin: 46px 0 0;
+  width: 720px;
+  height: 248px;
+  resize: none;
+  padding: 34px 0 0 50px;
+  border: none;
+  border-radius: 5px;
+  background-color: #e5e5e5;
+}
+.contact .contact__form form textarea::placeholder {
+  color: #333333;
+}
+.contact .contact__form form input[type=text], .contact .contact__form form input[type=email] {
+  width: 339px;
+  height: 69px;
+  background-color: #e5e5e5;
+  border: none;
+  padding: 0 0 0 50px;
+  border-radius: 5px;
+}
+.contact .contact__form form input[type=text]::placeholder, .contact .contact__form form input[type=email]::placeholder {
+  color: #333333;
+}
+.contact .contact__form form input[type=button] {
+  background-color: #ff2d2d;
+  border: solid 2px #ff2d2d;
+  padding: 25px 50px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.2s;
+  width: 339px;
+}
+.contact .contact__form form input[type=button]:hover {
+  border-color: #ff2d2d;
+  background-color: #ffffff;
+  color: #ff2d2d;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

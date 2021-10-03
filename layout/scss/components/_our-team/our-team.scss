@@ -1,0 +1,89 @@
+.our-team{
+    .our-team__text{
+        color: $offer-font-color;
+        .our-team__text-title{
+            padding: 102px 0 0;
+            @extend %dark-title;
+        }
+        .our-team__text-subtitle{
+            padding: 19px 0 0;
+            @extend %dark-subtitle;
+            max-width: 450px;
+            @include pseudo-strip(28px, 0, 0, 0);
+        }
+        
+    }
+    .our-team__info{
+        padding: 70px 0 0;
+        @extend %row-flexed;
+        justify-content: space-between;
+        .our-team__photo{
+            color: red;//! WHAT IS IT???????????????????????????????????????????????????????
+        }
+        .our-team__details{
+            color: $offer-font-color;
+            @extend %column-flexed;
+            flex-wrap: wrap;
+            padding: 0 0 0 72px;
+            justify-content: flex-end;
+            .our-team__person-info{
+                .our-team__person-name{
+                    font-size: 28px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    padding: 0 0 16px;
+                }
+                .our-team__person-about{
+                    line-height: 28px;
+                    padding: 0 0 34px;
+                }
+                .our-team__person-links{
+                    padding: 0 0 60px;
+                    ul{
+                        
+                        display: flex;
+                        flex-wrap: wrap;
+                        text-transform: capitalize;
+                        font-style: italic;
+                        font-size: 18px;
+                        li{
+                            list-style-type: none;
+                            &:not(:last-child){
+                                padding: 0 48px 0 0;
+                            }
+                            a{
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .our-team__other-members{
+                @extend %row-flexed;
+                justify-content: space-between;
+                .our-team__member{
+                    position: relative;//! HOVER TEXT BOX - - - - СЕЙЧАС ЭТО КОСТЫЛЬ - - - НУЖНО ПЕРЕДЕЛАТЬ!!!!!!!!! //ANCHOR
+                    img{
+                        width: 100%;
+                    }
+                    a{
+                        position: absolute;
+                        width: 100%;
+                        padding: 10px 0;
+                        top: 170px;
+                        left: 0;
+                        background: transparent;
+                        color: transparent;
+                        transition: $global-transition;
+                        &:hover{
+                            display: inline;
+                            color:$nav-font-color;
+                            background: rgba($color: #000000, $alpha: 0.5);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

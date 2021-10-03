@@ -1,0 +1,53 @@
+//@include pseudo-strip(28px, 0, 0, 0);
+.contact{
+    .contact__title{
+        @extend %dark-title;
+        padding: 89px 0 0;
+    }
+    .contact__subtitle{
+        @extend %dark-subtitle;
+        padding: 28px 0 0;
+        @include pseudo-strip(54px, 0, 0, 0);
+    }
+    .contact__form{
+        @extend %row-flexed;
+        flex-wrap: wrap;
+        form{
+            @extend %column-flexed;
+            flex-wrap: wrap;
+            color: $offer-font-color;
+            div{
+                @extend %row-flexed;
+                justify-content: space-between;
+            }
+            textarea{
+                margin: 46px 0 0;
+                width: 720px;
+                height: 248px;
+                resize: none;
+                padding: 34px 0 0 50px;
+                border: none;
+                border-radius: 5px;
+                background-color: $contact-form-items-bg-color;
+                @include placeholder-color($offer-font-color);
+                @extend %remove-focus-outline;
+            }
+            input{
+                &[type=text], &[type=email]{
+                    width: 339px;
+                    height: 69px; 
+                    background-color: $contact-form-items-bg-color;
+                    border: none;
+                    padding: 0 0 0 50px;
+                    border-radius: 5px;
+                    @include placeholder-color($offer-font-color);
+                    @extend %remove-focus-outline;
+                }
+                &[type=button]{
+                    @include form-button($banner-btn-bg-color, $banner-btn-font-color, $banner-btn-bg-color, $banner-btn-font-color);
+                    width: 339px;
+                }
+            }
+        }
+    }
+}
