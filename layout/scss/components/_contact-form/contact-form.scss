@@ -1,4 +1,3 @@
-//@include pseudo-strip(28px, 0, 0, 0);
 .contact{
     .contact__title{
         @extend %dark-title;
@@ -9,44 +8,79 @@
         padding: 28px 0 0;
         @include pseudo-strip(54px, 0, 0, 0);
     }
-    .contact__form{
+    .contact__feedback{
         @extend %row-flexed;
         flex-wrap: wrap;
-        form{
+        justify-content: space-between;
+        padding: 76px 0 0;
+        .contact__form{
+            form{
+                @extend %column-flexed;
+                flex-wrap: wrap;
+                color: $offer-font-color;
+                .contact__form-details{
+                    @extend %row-flexed;
+                    justify-content: space-between;
+                    input{
+                        &[type=text], &[type=email]{
+                            width: 339px;
+                            height: 69px; 
+                            background-color: $contact-form-items-bg-color;
+                            border: none;
+                            padding: 0 0 0 50px;
+                            border-radius: 5px;
+                            @include placeholder-color($offer-font-color);
+                            @extend %remove-focus-outline;
+                        }
+                    }
+                }
+
+                .contact__form-message{
+                    padding: 46px 0 0;
+                    textarea{
+                        width: 720px;
+                        height: 248px;
+                        resize: none;
+                        padding: 34px 0 0 50px;
+                        border: none;
+                        border-radius: 5px;
+                        background-color: $contact-form-items-bg-color;
+                        @include placeholder-color($offer-font-color);
+                        @extend %remove-focus-outline;
+                    }
+                }
+                .contact__form-button{
+                    padding: 39px 0 0;
+                    input[type=button]{
+                        @include form-button($banner-btn-bg-color, $banner-btn-font-color, $banner-btn-bg-color, $banner-btn-font-color);
+                        width: 339px;
+                    }
+                }
+            }
+        }
+        .contact__info{
+            position: relative;
+            padding: 0 0 0 46px;
             @extend %column-flexed;
-            flex-wrap: wrap;
-            color: $offer-font-color;
-            div{
-                @extend %row-flexed;
-                justify-content: space-between;
+            justify-content: center;
+            
+            .contact__info-title{
+                @extend %medium-title;
             }
-            textarea{
-                margin: 46px 0 0;
-                width: 720px;
-                height: 248px;
-                resize: none;
-                padding: 34px 0 0 50px;
-                border: none;
-                border-radius: 5px;
-                background-color: $contact-form-items-bg-color;
-                @include placeholder-color($offer-font-color);
-                @extend %remove-focus-outline;
+            .contact__info-address, .contact__info-mail, .contact__info-phone{
+                padding: 15px 0 0;
+                @extend %medium-subtitle;
             }
-            input{
-                &[type=text], &[type=email]{
-                    width: 339px;
-                    height: 69px; 
-                    background-color: $contact-form-items-bg-color;
-                    border: none;
-                    padding: 0 0 0 50px;
-                    border-radius: 5px;
-                    @include placeholder-color($offer-font-color);
-                    @extend %remove-focus-outline;
-                }
-                &[type=button]{
-                    @include form-button($banner-btn-bg-color, $banner-btn-font-color, $banner-btn-bg-color, $banner-btn-font-color);
-                    width: 339px;
-                }
+            &::before{
+                content: '';
+                z-index: -1;
+                display: block;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                position: absolute;
+                background-color: $contact-info-bg-color;
             }
         }
     }

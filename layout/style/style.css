@@ -77,12 +77,12 @@ select {
     scroll-behavior: auto !important;
   }
 }
-.contact .contact__form form, .subscribe__wrapper .subscribe, .our-team .our-team__info .our-team__details, .products__wrapper .products, .offer .offer__items .offer__items-item, .offer .offer__description, .banner__wrapper .banner .banner__description {
+.contact .contact__feedback .contact__info, .contact .contact__feedback .contact__form form, .subscribe__wrapper .subscribe, .our-team .our-team__info .our-team__details, .products__wrapper .products, .offer .offer__items .offer__items-item, .offer .offer__description, .banner__wrapper .banner .banner__description {
   display: flex;
   flex-direction: column;
 }
 
-.contact .contact__form form div, .contact .contact__form, .subscribe__wrapper .subscribe .subscribe__form form, .our-team .our-team__info .our-team__details .our-team__other-members, .our-team .our-team__info, .products__wrapper .products .products__items, .offer .offer__items, .offer {
+.contact .contact__feedback .contact__form form .contact__form-details, .contact .contact__feedback, .subscribe__wrapper .subscribe .subscribe__form, .our-team .our-team__info .our-team__details .our-team__other-members, .our-team .our-team__info, .products__wrapper .products .products__items, .offer .offer__items, .offer {
   display: flex;
   flex-direction: row;
 }
@@ -91,7 +91,7 @@ select {
   padding: 16px 70px;
 }
 
-.contact .contact__form form input[type=button], .subscribe__wrapper .subscribe .subscribe__form form input[type=button] {
+.contact .contact__feedback .contact__form form .contact__form-button input[type=button], .subscribe__wrapper .subscribe .subscribe__form .subscribe__form-button input[type=button] {
   border-radius: 5px;
 }
 
@@ -102,13 +102,25 @@ select {
   color: #333333;
 }
 
+.contact .contact__feedback .contact__info .contact__info-title {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: bold;
+  color: #d5d5d5;
+}
+
+.contact .contact__feedback .contact__info .contact__info-address, .contact .contact__feedback .contact__info .contact__info-mail, .contact .contact__feedback .contact__info .contact__info-phone {
+  font-size: 16px;
+  color: #d5d5d5;
+}
+
 .contact .contact__subtitle, .our-team .our-team__text .our-team__text-subtitle, .products__wrapper .products .products__subtitle, .offer .offer__description .offer__description-subtitle {
   line-height: 28px;
   font-size: 16px;
   color: #333333;
 }
 
-.contact .contact__form form input[type=text]:focus-visible, .contact .contact__form form input[type=email]:focus-visible, .contact .contact__form form textarea:focus-visible, .subscribe__wrapper .subscribe .subscribe__form form input[type=email]:focus-visible {
+.contact .contact__feedback .contact__form form .contact__form-message textarea:focus-visible, .contact .contact__feedback .contact__form form .contact__form-details input[type=text]:focus-visible, .contact .contact__feedback .contact__form form .contact__form-details input[type=email]:focus-visible, .subscribe__wrapper .subscribe .subscribe__form .subscribe__form-input input[type=email]:focus-visible {
   outline: none;
 }
 
@@ -436,20 +448,26 @@ header .menu .menu__list .menu__list-item a:hover {
 }
 .subscribe__wrapper .subscribe .subscribe__form {
   padding: 60px 0 0;
+  width: 100%;
+  flex-wrap: wrap;
 }
-.subscribe__wrapper .subscribe .subscribe__form form input[type=email] {
+.subscribe__wrapper .subscribe .subscribe__form .subscribe__form-input {
+  width: calc(100% - 214px);
+  padding: 0 20px 0 0;
+}
+.subscribe__wrapper .subscribe .subscribe__form .subscribe__form-input input[type=email] {
   border: none;
-  width: 520px;
-  height: 79px;
+  width: 100%;
+  max-width: 520px;
   border-radius: 5px;
   padding: 0 36px 0;
-  margin: 0 20px 0 0;
   color: #333333;
 }
-.subscribe__wrapper .subscribe .subscribe__form form input[type=email]::placeholder {
+.subscribe__wrapper .subscribe .subscribe__form .subscribe__form-input input[type=email]::placeholder {
   color: #333333;
 }
-.subscribe__wrapper .subscribe .subscribe__form form input[type=button] {
+.subscribe__wrapper .subscribe .subscribe__form .subscribe__form-button input[type=button] {
+  max-width: 214px;
   background-color: #ff2d2d;
   border: solid 2px #ff2d2d;
   padding: 25px 50px;
@@ -458,7 +476,7 @@ header .menu .menu__list .menu__list-item a:hover {
   font-weight: bold;
   transition: 0.2s;
 }
-.subscribe__wrapper .subscribe .subscribe__form form input[type=button]:hover {
+.subscribe__wrapper .subscribe .subscribe__form .subscribe__form-button input[type=button]:hover {
   border-color: #ff2d2d;
   background-color: #ffffff;
   color: #ff2d2d;
@@ -479,18 +497,33 @@ header .menu .menu__list .menu__list-item a:hover {
   width: 131px;
   background-color: #ff3f40;
 }
-.contact .contact__form {
+.contact .contact__feedback {
   flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 76px 0 0;
 }
-.contact .contact__form form {
+.contact .contact__feedback .contact__form form {
   flex-wrap: wrap;
   color: #333333;
 }
-.contact .contact__form form div {
+.contact .contact__feedback .contact__form form .contact__form-details {
   justify-content: space-between;
 }
-.contact .contact__form form textarea {
-  margin: 46px 0 0;
+.contact .contact__feedback .contact__form form .contact__form-details input[type=text], .contact .contact__feedback .contact__form form .contact__form-details input[type=email] {
+  width: 339px;
+  height: 69px;
+  background-color: #e5e5e5;
+  border: none;
+  padding: 0 0 0 50px;
+  border-radius: 5px;
+}
+.contact .contact__feedback .contact__form form .contact__form-details input[type=text]::placeholder, .contact .contact__feedback .contact__form form .contact__form-details input[type=email]::placeholder {
+  color: #333333;
+}
+.contact .contact__feedback .contact__form form .contact__form-message {
+  padding: 46px 0 0;
+}
+.contact .contact__feedback .contact__form form .contact__form-message textarea {
   width: 720px;
   height: 248px;
   resize: none;
@@ -499,21 +532,13 @@ header .menu .menu__list .menu__list-item a:hover {
   border-radius: 5px;
   background-color: #e5e5e5;
 }
-.contact .contact__form form textarea::placeholder {
+.contact .contact__feedback .contact__form form .contact__form-message textarea::placeholder {
   color: #333333;
 }
-.contact .contact__form form input[type=text], .contact .contact__form form input[type=email] {
-  width: 339px;
-  height: 69px;
-  background-color: #e5e5e5;
-  border: none;
-  padding: 0 0 0 50px;
-  border-radius: 5px;
+.contact .contact__feedback .contact__form form .contact__form-button {
+  padding: 39px 0 0;
 }
-.contact .contact__form form input[type=text]::placeholder, .contact .contact__form form input[type=email]::placeholder {
-  color: #333333;
-}
-.contact .contact__form form input[type=button] {
+.contact .contact__feedback .contact__form form .contact__form-button input[type=button] {
   background-color: #ff2d2d;
   border: solid 2px #ff2d2d;
   padding: 25px 50px;
@@ -523,11 +548,30 @@ header .menu .menu__list .menu__list-item a:hover {
   transition: 0.2s;
   width: 339px;
 }
-.contact .contact__form form input[type=button]:hover {
+.contact .contact__feedback .contact__form form .contact__form-button input[type=button]:hover {
   border-color: #ff2d2d;
   background-color: #ffffff;
   color: #ff2d2d;
   cursor: pointer;
+}
+.contact .contact__feedback .contact__info {
+  position: relative;
+  padding: 0 0 0 46px;
+  justify-content: center;
+}
+.contact .contact__feedback .contact__info .contact__info-address, .contact .contact__feedback .contact__info .contact__info-mail, .contact .contact__feedback .contact__info .contact__info-phone {
+  padding: 15px 0 0;
+}
+.contact .contact__feedback .contact__info::before {
+  content: "";
+  z-index: -1;
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: #2d2d2d;
 }
 
 /*# sourceMappingURL=style.css.map */

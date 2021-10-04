@@ -16,21 +16,27 @@
             color: #fdfcf8;
         }
         .subscribe__form{
-            padding: 60px 0 0;
-            form{
-                @extend %row-flexed;
+        padding: 60px 0 0;
+        width: 100%;
+        flex-wrap: wrap;
+        @extend %row-flexed;
+            .subscribe__form-input{
+                width: calc(100% - 214px);
+                padding: 0 20px 0 0;
                 input[type=email]{
                     border: none;
-                    width: 520px;
-                    height: 79px;
+                    width: 100%;
+                    max-width: 520px;
                     border-radius: 5px;
                     padding: 0 36px 0;
-                    margin: 0 20px 0 0;
                     color: $offer-font-color;
                     @include placeholder-color($offer-font-color);
                     @extend %remove-focus-outline;
                 }
+            }
+            .subscribe__form-button{
                 input[type=button]{
+                    max-width: 214px;
                     @include form-button($banner-btn-bg-color, $banner-btn-font-color, $banner-btn-bg-color, $banner-btn-font-color);
                 }
             }

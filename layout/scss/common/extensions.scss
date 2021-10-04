@@ -23,6 +23,18 @@
     color: $offer-font-color;
 }
 
+%medium-title{
+    text-transform: uppercase;
+    font-size: $title-medium-font-size;
+    font-weight: bold;
+    color: $title-medium-font-color;
+}
+
+%medium-subtitle{
+    font-size: $subtitle-medium-font-size;
+    color: $subtitle-medium-font-color;
+}
+
 %dark-subtitle{
     line-height: 28px;
     font-size: $subtitle-font-size;
