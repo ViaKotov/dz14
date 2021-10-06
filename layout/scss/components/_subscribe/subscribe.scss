@@ -1,6 +1,5 @@
 .subscribe__wrapper{
     width: 100%;
-    margin: 110px auto 0;
     background-color: $third-bg-color;
     .subscribe{
         padding: 140px 0;
@@ -16,13 +15,14 @@
             color: #fdfcf8;
         }
         .subscribe__form{
+        @extend %row-flexed;
+        justify-content: center;
+        align-content: center;
         padding: 60px 0 0;
         width: 100%;
-        flex-wrap: wrap;
-        @extend %row-flexed;
             .subscribe__form-input{
-                width: calc(100% - 214px);
                 padding: 0 20px 0 0;
+                width: 100%;
                 input[type=email]{
                     border: none;
                     width: 100%;
