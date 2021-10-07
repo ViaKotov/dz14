@@ -6,6 +6,7 @@
 body{
     background-color: $main-bg-color;
     font-family: $body-main-font;
+    overflow-x: hidden;
 }
 
 .width{

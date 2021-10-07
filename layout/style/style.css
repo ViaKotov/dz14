@@ -132,6 +132,7 @@ select {
 body {
   background-color: #ffffff;
   font-family: "Open Sans", sans-serif;
+  overflow-x: hidden;
 }
 
 .width {
@@ -189,7 +190,7 @@ body {
   text-decoration: none;
   color: #ffffff;
   font-weight: 600;
-  border: none 0 transparent;
+  border: solid 2px #ff0000;
   border-radius: 5px;
   background-color: #ff2d2d;
   display: inline-block;
@@ -197,7 +198,7 @@ body {
 }
 .banner__wrapper .banner .banner__description .banner__description-link a:hover {
   color: #ff2d2d;
-  background-color: #313030;
+  background-color: #ffffff;
 }
 .banner__wrapper .banner .banner__video {
   display: flex;
@@ -211,12 +212,12 @@ header {
   background-color: #f6f2f2;
 }
 header .menu {
-  display: flex;
-  justify-content: center;
   background-color: #313030;
   font-size: 14px;
 }
 header .menu .menu__list {
+  display: flex;
+  justify-content: center;
   text-transform: uppercase;
 }
 header .menu .menu__list .menu__list-item {
@@ -368,9 +369,6 @@ header .menu .menu__list .menu__list-item a:hover {
   padding: 70px 0 0;
   justify-content: space-between;
 }
-.our-team .our-team__info .our-team__photo {
-  color: red;
-}
 .our-team .our-team__info .our-team__details {
   color: #333333;
   flex-wrap: wrap;
@@ -404,7 +402,12 @@ header .menu .menu__list .menu__list-item a:hover {
   padding: 0 48px 0 0;
 }
 .our-team .our-team__info .our-team__details .our-team__person-info .our-team__person-links ul li a {
+  color: #333333;
   text-decoration: none;
+  transition: 0.2s;
+}
+.our-team .our-team__info .our-team__details .our-team__person-info .our-team__person-links ul li a:hover {
+  color: #ff3f40;
 }
 .our-team .our-team__info .our-team__details .our-team__other-members {
   justify-content: space-between;
@@ -415,20 +418,26 @@ header .menu .menu__list .menu__list-item a:hover {
 .our-team .our-team__info .our-team__details .our-team__other-members .our-team__member img {
   width: 100%;
 }
+.our-team .our-team__info .our-team__details .our-team__other-members .our-team__member img:hover + a {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+}
 .our-team .our-team__info .our-team__details .our-team__other-members .our-team__member a {
   position: absolute;
   width: 100%;
-  padding: 10px 0;
-  top: 170px;
+  padding: 10px 5px;
+  bottom: 0;
   left: 0;
   background: transparent;
   color: transparent;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
   transition: 0.2s;
 }
 .our-team .our-team__info .our-team__details .our-team__other-members .our-team__member a:hover {
-  display: inline;
   color: #e0e0e0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .subscribe__wrapper {
@@ -457,20 +466,24 @@ header .menu .menu__list .menu__list-item a:hover {
 .subscribe__wrapper .subscribe .subscribe__form .subscribe__form-input {
   padding: 0 20px 0 0;
   width: 100%;
+  max-width: 520px;
 }
 .subscribe__wrapper .subscribe .subscribe__form .subscribe__form-input input[type=email] {
-  border: none;
+  border-color: transparent;
   width: 100%;
-  max-width: 520px;
   border-radius: 5px;
-  padding: 0 36px 0;
+  padding: 25px 36px;
   color: #333333;
 }
 .subscribe__wrapper .subscribe .subscribe__form .subscribe__form-input input[type=email]::placeholder {
   color: #333333;
 }
-.subscribe__wrapper .subscribe .subscribe__form .subscribe__form-button input[type=button] {
+.subscribe__wrapper .subscribe .subscribe__form .subscribe__form-button {
+  width: 100%;
   max-width: 214px;
+}
+.subscribe__wrapper .subscribe .subscribe__form .subscribe__form-button input[type=button] {
+  width: 100%;
   background-color: #ff2d2d;
   border: solid 2px #ff2d2d;
   padding: 25px 50px;
@@ -501,9 +514,23 @@ header .menu .menu__list .menu__list-item a:hover {
   background-color: #ff3f40;
 }
 .contact .contact__feedback {
+  width: 100%;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 76px 0 0;
+  margin: 76px 0 0;
+  position: relative;
+}
+.contact .contact__feedback::after {
+  content: "";
+  height: 100%;
+  width: 50vw;
+  top: 0;
+  right: -50vw;
+  position: absolute;
+  background-color: #2d2d2d;
+}
+.contact .contact__feedback .contact__form {
+  width: 50%;
 }
 .contact .contact__feedback .contact__form form {
   flex-wrap: wrap;
@@ -513,7 +540,7 @@ header .menu .menu__list .menu__list-item a:hover {
   justify-content: space-between;
 }
 .contact .contact__feedback .contact__form form .contact__form-details input[type=text], .contact .contact__feedback .contact__form form .contact__form-details input[type=email] {
-  width: 339px;
+  width: calc(50% - 27px);
   height: 69px;
   background-color: #e5e5e5;
   border: none;
@@ -527,7 +554,7 @@ header .menu .menu__list .menu__list-item a:hover {
   padding: 46px 0 0;
 }
 .contact .contact__feedback .contact__form form .contact__form-message textarea {
-  width: 720px;
+  width: 100%;
   height: 248px;
   resize: none;
   padding: 34px 0 0 50px;
@@ -542,6 +569,7 @@ header .menu .menu__list .menu__list-item a:hover {
   padding: 39px 0 0;
 }
 .contact .contact__feedback .contact__form form .contact__form-button input[type=button] {
+  display: block;
   background-color: #ff2d2d;
   border: solid 2px #ff2d2d;
   padding: 25px 50px;
@@ -549,7 +577,7 @@ header .menu .menu__list .menu__list-item a:hover {
   text-transform: uppercase;
   font-weight: bold;
   transition: 0.2s;
-  width: 339px;
+  width: 100%;
 }
 .contact .contact__feedback .contact__form form .contact__form-button input[type=button]:hover {
   border-color: #ff2d2d;
@@ -558,23 +586,13 @@ header .menu .menu__list .menu__list-item a:hover {
   cursor: pointer;
 }
 .contact .contact__feedback .contact__info {
-  position: relative;
+  width: calc(50% - 108px);
+  background-color: #2d2d2d;
   padding: 0 0 0 46px;
   justify-content: center;
 }
 .contact .contact__feedback .contact__info .contact__info-address, .contact .contact__feedback .contact__info .contact__info-mail, .contact .contact__feedback .contact__info .contact__info-phone {
   padding: 15px 0 0;
-}
-.contact .contact__feedback .contact__info::before {
-  content: "";
-  z-index: -1;
-  display: block;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  position: absolute;
-  background-color: #2d2d2d;
 }
 
 footer .footer__wrapper {

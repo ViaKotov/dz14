@@ -18,9 +18,6 @@
         padding: 70px 0 0;
         @extend %row-flexed;
         justify-content: space-between;
-        .our-team__photo{
-            color: red;//! WHAT IS IT???????????????????????????????????????????????????????
-        }
         .our-team__details{
             color: $offer-font-color;
             @extend %column-flexed;
@@ -53,7 +50,12 @@
                                 padding: 0 48px 0 0;
                             }
                             a{
+                                color: $offer-font-color;
                                 text-decoration: none;
+                                transition: $global-transition;
+                                &:hover{
+                                    color: $nav-bg-hover-color;
+                                }
                             }
                         }
                     }
@@ -64,23 +66,30 @@
                 @extend %row-flexed;
                 justify-content: space-between;
                 .our-team__member{
-                    position: relative;//! HOVER TEXT BOX - - - - СЕЙЧАС ЭТО КОСТЫЛЬ - - - НУЖНО ПЕРЕДЕЛАТЬ!!!!!!!!! //ANCHOR
+                    position: relative;
                     img{
                         width: 100%;
+                        &:hover + a{
+                            background: rgba($color: #000000, $alpha: 0.5);
+                            color: white;
+                        }
                     }
                     a{
                         position: absolute;
                         width: 100%;
-                        padding: 10px 0;
-                        top: 170px;
+                        padding: 10px 5px;
+                        bottom: 0;
                         left: 0;
                         background: transparent;
                         color: transparent;
+                        
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        text-align: center;
                         transition: $global-transition;
                         &:hover{
-                            display: inline;
                             color:$nav-font-color;
-                            background: rgba($color: #000000, $alpha: 0.5);
+                            background: rgba($color: #000000, $alpha: 0.8);
                         }
                     }
                 }

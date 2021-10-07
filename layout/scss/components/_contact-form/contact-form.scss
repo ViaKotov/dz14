@@ -9,11 +9,23 @@
         @include pseudo-strip(54px, 0, 0, 0);
     }
     .contact__feedback{
+        width: 100%;
         @extend %row-flexed;
         flex-wrap: wrap;
         justify-content: space-between;
-        padding: 76px 0 0;
+        margin: 76px 0 0;
+        position: relative;
+        &::after{
+            content: '';
+            height: 100%;
+            width: calc(100vw / 2);
+            top: 0;
+            right: calc(-100vw / 2);
+            position: absolute;
+            background-color: $contact-info-bg-color;
+        }
         .contact__form{
+            width: 50%;
             form{
                 @extend %column-flexed;
                 flex-wrap: wrap;
@@ -23,7 +35,7 @@
                     justify-content: space-between;
                     input{
                         &[type=text], &[type=email]{
-                            width: 339px;
+                            width: calc(50% - 27px);
                             height: 69px; 
                             background-color: $contact-form-items-bg-color;
                             border: none;
@@ -38,7 +50,7 @@
                 .contact__form-message{
                     padding: 46px 0 0;
                     textarea{
-                        width: 720px;
+                        width: 100%;
                         height: 248px;
                         resize: none;
                         padding: 34px 0 0 50px;
@@ -52,14 +64,17 @@
                 .contact__form-button{
                     padding: 39px 0 0;
                     input[type=button]{
+                        display: block;
                         @include form-button($banner-btn-bg-color, $banner-btn-font-color, $banner-btn-bg-color, $banner-btn-font-color);
-                        width: 339px;
+                        width: 100%;
                     }
                 }
             }
         }
         .contact__info{
-            position: relative;
+            width: calc(50% - 108px);
+            
+            background-color: $contact-info-bg-color;
             padding: 0 0 0 46px;
             @extend %column-flexed;
             justify-content: center;
@@ -70,17 +85,6 @@
             .contact__info-address, .contact__info-mail, .contact__info-phone{
                 padding: 15px 0 0;
                 @extend %medium-subtitle;
-            }
-            &::before{
-                content: '';
-                z-index: -1;
-                display: block;
-                height: 100%;
-                width: 100%;
-                top: 0;
-                left: 0;
-                position: absolute;
-                background-color: $contact-info-bg-color;
             }
         }
     }

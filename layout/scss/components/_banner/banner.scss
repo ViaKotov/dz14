@@ -34,7 +34,7 @@
             .banner__description-link{
                 padding: 30px 0 0;
                 a{
-                    @include valid-button(16px, capitalize, none, $banner-btn-font-color, 600, none, 0, transparent, 5px, $banner-btn-bg-color, $banner-btn-bg-color, $nav-bg-common-color);
+                    @include valid-button(16px, capitalize, none, $banner-btn-font-color, 600, solid, 2px, $offer-btn-border-color, 5px, $banner-btn-bg-color, $banner-btn-bg-color, $offer-btn-bg-color);
                     transition: .2s;
                 }
             } 
